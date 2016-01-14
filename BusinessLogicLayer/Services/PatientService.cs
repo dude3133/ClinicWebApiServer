@@ -9,7 +9,7 @@ using System.Text;
 
 namespace BusinessLogicLayer.Services
 {
-    public interface IPatientService
+    public interface IPatientService 
     {
         IEnumerable<TruncatedPatient> GetAllPatients();
     }
