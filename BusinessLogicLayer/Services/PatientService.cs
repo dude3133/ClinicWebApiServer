@@ -12,6 +12,7 @@ namespace BusinessLogicLayer.Services
     public interface IPatientService 
     {
         IEnumerable<TruncatedPatient> GetAllPatients();
+        TruncatedPatient GetPatientById(int id);
     }
 
     public class PatientService : IPatientService
@@ -28,6 +29,14 @@ namespace BusinessLogicLayer.Services
             using (ClinicContext context = ClinicContextProvider.GetContext())
             {
                 return context.Patients.ToList().Select(x => truncatedPatientMapper.Map(x));
+            }
+        }
+
+        public TruncatedPatient GetPatientById(int id)
+        {
+            using (ClinicContext context = ClinicContextProvider.GetContext())
+            {
+                return truncatedPatientMapper.Map(context.Patients.Where(x => x.Id==id).FirstOrDefault());
             }
         }
     }

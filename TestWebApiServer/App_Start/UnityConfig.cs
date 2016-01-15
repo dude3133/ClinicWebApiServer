@@ -17,8 +17,14 @@ namespace TestWebApiServer
             
             // e.g. container.RegisterType<ITestService, TestService>();
             container.RegisterType<ITruncatedPatientMapper, TruncatedPatientMapper>();
+            container.RegisterType<ITruncatedDiseaseMapper, TruncatedDiseaseMapper>();
+            container.RegisterType<ITruncatedDoctorMapper, TruncatedDoctorMapper>();
+            container.RegisterType<ITruncatedMedicationMapper, TruncatedMedicationMapper>();
+            container.RegisterType<ITruncatedPatientMapper, TruncatedPatientMapper>();
+            container.RegisterType<ITruncatedTreatPlanMapper, TruncatedTreatPlanMapper>();
 
             container.RegisterType<IPatientService, PatientService>();
+            container.RegisterType<ITreatPlanService, TreatPlanService>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

@@ -48,10 +48,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mappers\TruncatedDiseaseMapper.cs" />
+    <Compile Include="Mappers\TruncatedDoctorMapper.cs" />
+    <Compile Include="Mappers\TruncatedMedicationMapper.cs" />
+    <Compile Include="Mappers\TruncatedTreatPlanMapper.cs" />
     <Compile Include="Mappers\TruncatedPatientMapper.cs" />
+    <Compile Include="Models\TruncatedDisease.cs" />
+    <Compile Include="Models\TruncatedDoctor.cs" />
+    <Compile Include="Models\TruncatedMedication.cs" />
+    <Compile Include="Models\TruncatedTreatPlan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\PatientService.cs" />
     <Compile Include="Models\TruncatedPatient.cs" />
+    <Compile Include="Services\TreatPlanService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccesLayer\DataAccesLayer.csproj">

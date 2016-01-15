@@ -17,6 +17,11 @@ namespace TestWebApiServer.Controllers
         public IEnumerable<TruncatedPatient> Get()
         {
             return patientService.GetAllPatients();
+        }
+
+        public TruncatedPatient Get(int id)
+        {
+            return patientService.GetPatientById(id);
         } 
     }
 }
