@@ -9,6 +9,7 @@ using System.Web.Http;
 
 namespace TestWebApiServer.Controllers
 {
+    [RoutePrefix("api/TreatPlan")]
     public class TreatPlanController : ApiController
     {
         public TreatPlanController(ITreatPlanService _treatPlanService)
@@ -18,9 +19,16 @@ namespace TestWebApiServer.Controllers
 
         private ITreatPlanService treatPlanService;
 
+        [Route("{id:int}")]
         public IEnumerable<TruncatedTreatPlan> Get(int id)
         {
             return treatPlanService.GetPatientTreatPlans(id);
+        }
+
+        [Route("info/{id:int}")]
+        public TruncatedTreatPlan GetInfo(int id)
+        {
+            return treatPlanService.GetTreatPlan(id);
         }
     }
 }

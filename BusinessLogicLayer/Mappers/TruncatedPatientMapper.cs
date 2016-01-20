@@ -18,6 +18,7 @@ namespace BusinessLogicLayer.Mappers
         {
             return new TruncatedPatient
             {
+                Id = p.Id,
                 FirstName = p.FirstName,
                 LastName = p.LastName,
                 Birthdate = p.Birthdate,

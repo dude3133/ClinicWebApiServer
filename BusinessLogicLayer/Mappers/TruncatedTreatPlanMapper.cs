@@ -34,6 +34,7 @@ namespace BusinessLogicLayer.Mappers
         {
             return new TruncatedTreatPlan
             {
+                Id = p.Id,
                 Begin = p.Begin,
                 End = p.End,
                 Disease = truncatedDiseaseMapper.Map(p.Disease),
